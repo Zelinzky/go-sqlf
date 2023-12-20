@@ -1,7 +1,6 @@
 package sqlf
 
 import (
-	"fmt"
 	"strings"
 )
 
