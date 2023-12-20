@@ -39,7 +39,6 @@ func Load(in string) map[string]string {
 	for _, line := range strings.SplitAfter(in, "\n") {
 		if strings.HasPrefix(line, sqlfPrefix) {
 			nameFields := strings.Fields(strings.TrimSpace(strings.TrimPrefix(line, sqlfPrefix)))
-			fmt.Println(nameFields, "hello")
 			currentName = nameFields[0]
 			continue
 		}
