@@ -1,8 +1,6 @@
 package sqlf
 
-import (
-	"strings"
-)
+import "strings"
 
 const sqlfPrefix = "-- name:"
 
