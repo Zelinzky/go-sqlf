@@ -4,6 +4,10 @@ import "strings"
 
 const sqlfPrefix = "-- name:"
 
+// Queries is an alias for the built-in Go type map[string]string.
+// It represents a collection of queries that have been loaded
+type Queries map[string]string
+
 // Load parses the input string and extracts SQL queries into a map.
 // It expects the input to be a string containing SQL queries separated by a prefix.
 // The queries are identified by lines prefixed with "---- sqlfName: $name".
@@ -30,7 +34,7 @@ const sqlfPrefix = "-- name:"
 //
 // The idea behind it is to have sql queries separated from code to take advantage of ide tools, and also to make navigation
 // in the project easier.
-func Load(in string) map[string]string {
+func Load(in string) Queries {
 	queries := make(map[string]string)
 	var currentName string
 	for _, line := range strings.SplitAfter(in, "\n") {
